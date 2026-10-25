@@ -13,10 +13,14 @@ const firebaseConfig = {
   appId: "1:764805912173:web:f98fdb0c1616fbaf86d164"
 };
 
+// Une seule instance Firebase, partagée par toute l'application.
 const app = initializeApp(firebaseConfig);
+
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const rtdb = getDatabase(app, "https://veltriov2-default-rtdb.europe-west1.firebasedatabase.app");
+
 export const googleProvider = new GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: "select_account" });
+
 export default app;
